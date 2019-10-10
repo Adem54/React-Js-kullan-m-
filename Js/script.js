@@ -267,3 +267,29 @@ if(i<people.length){
   console.log(i,". elemanda people dizisinde eleman yoktur!!")
 }
 }
+
+
+//Reduce ile bir dizi içerisindeki birden fazla olan elemanı nasıl buluruz.....
+//Buna tekrar bakalım...
+let books = [
+  "javascript",
+  "javascript",
+  "clojure",
+  "clojure",
+  "clojure",
+  "java",
+  "kotlin",
+  "kotlin"
+];
+
+
+const firstValue={}
+function _test(arr,count){//arr bir objedir
+!arr[count] ?//countta objenin properties i dir ve sonucu value yei verir value yoksa eğer 1 yaz diyoruz
+arr[count]=1 :
+arr[count]=arr[count] + 1;
+return arr;
+}
+
+let _result=books.reduce(test,firstValue);
+console.log("Resulst..",_result);
