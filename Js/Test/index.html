@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" type="text"  placeholder="Adınızı giriniz..">
+    <p id="p"></p>
+    <script>
+    
+     // pElement.innerHTML="Change data!"
+    
+    //console.log("inputValue: ",inputValue);
+    let input=document.querySelector("#input");
+    input.addEventListener("click",getData);
+    function getData(){
+        let inputValue=input.value;
+        let pElement=document.querySelector("#p");
+        pElement.innerHTML=input.value; 
+        console.log("pElement: ",pElement.innerText);
+    }
+   
+    //prompt ile içerisine girilen veri string dir eğer matemaktiksel işlemler yapacaksak önce çıkan değeri sayısal değer çevirmememiz gerekecek
+   let _number =prompt("Bir sayı giriniz: ");
+   console.log(typeof (_number));
+ 
+    </script>
+</body>
+</html>

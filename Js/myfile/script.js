@@ -126,3 +126,74 @@ let _arr34 = [
   console.log(fakt);
   }
   console.log("FAKT: ",fakt);
+
+//Uniq Dizi Oluşturma....
+const fruits = ['apple','apple','orange', 'orange', 'banana', 'banana'];
+const uniqueFruits = [...new Set(fruits)]; // ['apple', 'orange', 'banana']
+console.log("Fruits: ",fruits);
+console.log("uniqueFruits",uniqueFruits);
+// old way
+const uniqueFruFilter=fruits.filter((fruit, index, arr) => arr.indexOf(fruit) === index);
+console.log("uniqueFruFilter: ",uniqueFruFilter)
+
+console.log("Books: ",books);
+//Yeni Yöntemle Unique Dizi oluşturma
+const uniqueBooks = [...new Set(books)];
+console.log("uniqueBooks: ",uniqueBooks);
+//Eski Yöntemle Unique Dizi Oluşturma
+const uniqueBooksFilt=books.filter((book, index, arr) => arr.indexOf(book) === index);
+console.log("uniqueBooksFilt: ",uniqueBooksFilt);
+
+//Primitiv(İlkel) Tipler-Mutable
+let _c=5;
+let _a=5;
+let _b;
+console.log("A:",_a);
+console.log("C:",_c);
+_b=_a;
+
+_a === _b ? console.log("A ve C verileri birbirine eşittir!") : console.log("A ve C verileri birbirine eşit değildir....")
+console.log("a: ",_a);
+console.log("b: ",_b);
+_a=15;
+//Biz a ile b yi eşitleyince normalde a değişince b de a ya eşit olduğu için değişmesi gerekir ancak burda eşitlikten kasıt b a nın değerine şu şekilde eşit oluyor a nın bir kopyası alınıyor ve b ye eşitleniyor yani aslında a ile b nin sadece değerleri eşitleniyor bundan dolayı biz bu şekilde string,integer,boolean tiplerine mutable diyoruz..Yani burda a değiştirilemiyor a sadece kendine has bir değer olarak kalıyor...SAdece a kendisi değişince değişiyor onun dışında onu bir değişkenle eşitleyince aslında onu değiştirmiş olmuyouruz veya ona eşitlediğimiz değerin tekrar değişmesi a yı etkilemiyor..
+console.log("a: ",_a);
+console.log("b: ",_b);
+//Referans Tipler-Immutable(Değişebilir)
+let _z={name:"Ahmet",surname:"Kart"};
+console.log("Z:",_z);
+
+
+let _x={name:"Ahmet",surname:"Kart"};
+console.log("X:",_x);
+let _y;
+_y=_x;
+
+_x === _z  ?   console.log("X ve Z verileri birbirine eşittir!"): console.log("X ve Z verileri birbirine eşit değildir....")
+//İÇİNDEKİ DEĞERLER AYNI OLAN REFERANS TİPLERİN KARŞILAŞTIRILMASI....
+//Burda da dikkat edelim x ve z birbirine eşit çıkmayacaktır çünkü javascript te referans veriler karşılaştırılırken referans adresine göre karşılatştırılır değerlerine göre değil ondan dolayı biz değerleri aynı olan obje ve dizileri karşılaştırırken çok çok dikkatli olmalıyız çok hatalar yapabiliriz bu çok önemllii......
+console.log("_X: ",_x);
+console.log("_Y: ",_y);
+_x.name="Hüsamettin";
+
+console.log("_X: ",_x);
+console.log("_Y: ",_y);
+//Görüldüğü üzere biz x objesi içerisindeki name değerini değiştirdiğmizde biz y değerini x e eşitlediğimiz için y objesi de aynı şekilde değişiyor işte bundan dolayı biz immutable diyoruz referens tipi verilere
+
+//Immutable Tipleri Mutable Yapma
+
+//Bunun için biz spread operatörü ya da Object.assign kullanarak immutable olan verinin bir kopyasını alıp kopyası üzerinde işlem yaparız ki verimiz değişmesin bu çok önemlidir...
+
+//1)SPREAD METHODU
+//2)Object.Assign() METHODU
+//3)concat METHODU
+
+//FONKSİYON TEST
+
+const test=()=>{
+  return ()=>
+    console.log("Test fonksiyonumuz çalıştı....");
+  
+}
+ 
+test();
